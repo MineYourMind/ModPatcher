@@ -27,7 +27,7 @@ public class CoreMod implements IFMLLoadingPlugin {
 		ModPatcher.modPatcherAsCoreModStartup();
 	}
 
-	@Override
+	//@Override
 	public String getAccessTransformerClass() {
 		return null;
 	}

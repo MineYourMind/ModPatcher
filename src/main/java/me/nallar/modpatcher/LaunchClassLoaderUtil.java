@@ -5,11 +5,12 @@ import cpw.mods.fml.relauncher.FMLRelaunchLog;
 import net.minecraft.launchwrapper.IClassNameTransformer;
 import net.minecraft.launchwrapper.IClassTransformer;
 import net.minecraft.launchwrapper.LaunchClassLoader;
-import org.apache.logging.log4j.Level;
 
-import java.io.*;
-import java.lang.reflect.*;
-import java.util.*;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public enum LaunchClassLoaderUtil {
 	;
@@ -107,8 +108,8 @@ public enum LaunchClassLoaderUtil {
 					throw new RuntimeException(t);
 				}
 			} else if (basicClass != null || DEBUG_FINER) {
-				FMLRelaunchLog.log((DEBUG_FINER && basicClass != null) ? Level.WARN : Level.TRACE, t, "Failed to transform " + name);
-			}
+				FMLRelaunchLog.log((DEBUG_FINER && basicClass != null) ? java.util.logging.Level.WARNING : java.util.logging.Level.INFO, t, "Failed to transform " + name);
+            }
 			return basicClass;
 		}
 	}
