@@ -1,22 +1,21 @@
 package me.nallar.modpatcher;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @SuppressWarnings("UnusedDeclaration")
 public class PatcherLog {
 	/*
 	 * This class might get classloaded twice under different classloaders. Don't do anything important in a static {} block.
 	 */
-	public static final Logger LOGGER = LogManager.getLogger("ModPatcher");
+	public static final Logger LOGGER = Logger.getLogger("ModPatcher");
 
 	public static void error(String msg) {
-		LOGGER.error(msg);
+		LOGGER.severe(msg);
 	}
 
 	public static void warn(String msg) {
-		LOGGER.warn(msg);
+		LOGGER.warning(msg);
 	}
 
 	public static void info(String msg) {
@@ -24,7 +23,7 @@ public class PatcherLog {
 	}
 
 	public static void trace(String msg) {
-		LOGGER.trace(msg);
+		LOGGER.finest(msg);
 	}
 
 	public static void error(String msg, Throwable t) {
@@ -32,7 +31,7 @@ public class PatcherLog {
 	}
 
 	public static void warn(String msg, Throwable t) {
-		LOGGER.log(Level.WARN, msg, t);
+		LOGGER.log(Level.WARNING, msg, t);
 	}
 
 	public static void info(String msg, Throwable t) {
@@ -40,7 +39,7 @@ public class PatcherLog {
 	}
 
 	public static void trace(String msg, Throwable t) {
-		LOGGER.log(Level.TRACE, msg, t);
+		LOGGER.log(Level.FINEST, msg, t);
 	}
 
 	public static String classString(Object o) {
