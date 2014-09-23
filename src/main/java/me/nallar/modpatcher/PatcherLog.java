@@ -27,7 +27,7 @@ public class PatcherLog {
 	}
 
 	public static void error(String msg, Throwable t) {
-		LOGGER.log(Level.ERROR, msg, t);
+		LOGGER.log(Level.SEVERE, msg, t);
 	}
 
 	public static void warn(String msg, Throwable t) {
