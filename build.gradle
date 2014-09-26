@@ -78,7 +78,7 @@ jar {
     from((configurations.runtime - configurations.provided).filter{it.exists()}.collect { it.isDirectory() ? it : zipTree(it) }) {
         exclude "META-INF/**"
     }
-    from mappingsPath + 'packaged.srg'
+    from './build/unpacked/conf/packaged.srg'
     from mappingsPath + 'methods.csv'
     from mappingsPath + 'fields.csv'
     from './generated/extendsMap.obj'
