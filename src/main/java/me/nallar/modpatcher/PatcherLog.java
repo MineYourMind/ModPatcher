@@ -10,6 +10,9 @@ public class PatcherLog {
     /*
      * This class might get classloaded twice under different classloaders. Don't do anything important in a static {} block.
      */
+
+    static { Logger.getLogger("JavaPatcher").setParent(FMLRelaunchLog.log.getLogger()); }
+
     public static final Logger LOGGER = Logger.getLogger("ModPatcher");
 
     static { LOGGER.setParent(FMLRelaunchLog.log.getLogger()); }

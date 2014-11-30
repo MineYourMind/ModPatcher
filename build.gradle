@@ -61,10 +61,12 @@ configurations {
 }
 
 dependencies {
+    //provided 'org.apache.logging.log4j:log4j-core:2.0.2'
     provided 'com.google.guava:guava:18.0'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.0.2'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.0.2'
-    compile group:'me.nallar', name:'javapatcher', version:'1.1-SNAPSHOT', changing: true
+    //compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.0.2'
+    //compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.0.2'
+    //compile group:'me.nallar', name:'javapatcher', version:'1.6.4_1.1-SNAPSHOT', changing: true
+    compile files('libs/javapatcher-1.6.4_1.1-SNAPSHOT.jar')
     compile 'org.javassist:javassist:3.18.2-GA'
 }
 

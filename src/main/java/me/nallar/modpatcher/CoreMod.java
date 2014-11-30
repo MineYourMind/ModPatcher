@@ -1,6 +1,7 @@
 package me.nallar.modpatcher;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import me.nallar.javapatcher.PatcherLog;
 
 import java.io.IOException;
 import java.util.Map;
@@ -13,15 +14,13 @@ public class CoreMod implements IFMLLoadingPlugin {
 
 	private static void logToFile() {
 
-		//Logger logger = PatcherLog.LOGGER;
-		Logger logger = Logger.getLogger("JavaPatcher");
+		Logger modPatcherLogger = PatcherLog.LOGGER;
 		FileHandler fh;
 
 		try {
 
 			fh = new FileHandler("./ModPatcher.log");
-			logger.addHandler(fh);
-			//SimpleFormatter formatter = new SimpleFormatter();
+			modPatcherLogger.addHandler(fh);
 			LogFormatter formatter = new LogFormatter();
 			fh.setFormatter(formatter);
 
@@ -32,12 +31,6 @@ public class CoreMod implements IFMLLoadingPlugin {
 		}
 
 	}
-
-	/*private static void logToFile() {
-		FileAppender fa = FileAppender.createAppender("./logs/ModPatcher.log", "false", "false", "PatcherAppender", "true", "true", "true", null, null, null, null, null, null);
-		fa.start();
-		((org.apache.logging.log4j.core.Logger) LogManager.getLogger("JavaPatcher")).addAppender(fa);
-	}*/
 
 	static {
 		logToFile();
