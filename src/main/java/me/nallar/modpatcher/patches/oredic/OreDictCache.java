@@ -41,18 +41,6 @@ public class OreDictCache {
         return info.oreId;
     }
 
-    public static boolean doOreIDsMatch(ItemStack stackA, ItemStack stackB) {
-        ItemStackInfo info = getEntry(stackA);
-
-        return info.matches(stackB);
-    }
-
-    public static String getOreName(ItemStack stack) {
-        ItemStackInfo info = getEntry(stack);
-
-        return info.oreName;
-    }
-
     public static ItemStackInfo getEntry(ItemStack itemStack) {
         int itemKey = getItemKey(itemStack);
 
