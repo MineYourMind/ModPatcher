@@ -2,7 +2,7 @@ package me.nallar.modpatcher;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
-import java.util.*;
+import java.util.Map;
 
 @IFMLLoadingPlugin.Name("ModPatcher")
 @IFMLLoadingPlugin.SortingIndex(1001) // Magic value, after deobf transformer.
