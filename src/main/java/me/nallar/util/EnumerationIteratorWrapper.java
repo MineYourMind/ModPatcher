@@ -1,0 +1,21 @@
+package me.nallar.util;
+
+import java.util.*;
+
+public class EnumerationIteratorWrapper<T> implements Enumeration<T> {
+	private final Iterator<T> iterator;
+
+	public EnumerationIteratorWrapper(final Iterator<T> iterator) {
+		this.iterator = iterator;
+	}
+
+	@Override
+	public boolean hasMoreElements() {
+		return iterator.hasNext();
+	}
+
+	@Override
+	public T nextElement() {
+		return iterator.next();
+	}
+}
